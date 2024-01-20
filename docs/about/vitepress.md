@@ -45,8 +45,10 @@ pnpm vitepress init
 │  ● Default Theme (Out of the box, good-looking docs)
 │  ○ Default Theme + Customization
 │  ○ Custom Theme
+│
 ◇  Use TypeScript for config and theme fi1es?	// 是否使用Ts构建网站
 │  ○ Yes / ● No
+│
 ◇  Add VitePress npm scripts to package.json?	// 是否添加进package.json
 │  ● Yes / ○ No
 └
