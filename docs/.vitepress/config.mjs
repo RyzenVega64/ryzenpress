@@ -27,20 +27,14 @@ export default defineConfig({
     nav: [
       { text: "GO", link: "/", activeMatch: "/" },
       {
-        text: "个人成长",
+        text: "笔记",
         items: [
-          {
-            text: "VitePress",
-            link: "/about/vitepress",
-          },
-          { text: "Vue", link: "/about/vue" },
-          {
-            text: "TypeScript",
-            link: "/about/typescript",
-          },
+          { text: "初识", link: "/about/vue" },
+          { text: "经验", link: "/about/https" },
+          { text: "项目", link: "/about/project" },
         ],
       },
-      { text: "关于我", link: "/about/note" },
+      { text: "关于我", link: "/about/cv" },
     ],
     // 配置侧边栏
     sidebar: [
@@ -48,15 +42,22 @@ export default defineConfig({
         text: "初识",
         collapsed: true, // 默认折叠
         items: [
-          { text: "VitePress", link: "/about/vitepress" },
           { text: "Vue", link: "/about/vue" },
           { text: "TypeScript", link: "/about/typescript" },
+          { text: "VitePress", link: "/about/vitepress" },
         ],
       },
       {
-        text: "插件 / 库 / 包",
+        text: "经验",
         collapsed: true, // 默认折叠
-        items: [],
+        items: [
+          { text: "HTTPS", link: "/about/https" },
+          { text: "HTML", link: "/about/html" },
+          { text: "CSS", link: "/about/css" },
+          { text: "JavaScript", link: "/about/js" },
+          { text: "框架", link: "/about/frame" },
+          { text: "浏览器", link: "/about/browser" },
+        ],
       },
     ],
     // 配置图片链接
