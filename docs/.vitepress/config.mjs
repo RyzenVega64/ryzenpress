@@ -40,7 +40,7 @@ export default defineConfig({
     sidebar: [
       {
         text: "初识",
-        collapsed: true, // 默认折叠
+        collapsed: false, // 默认折叠
         items: [
           { text: "Vue", link: "/about/vue" },
           { text: "TypeScript", link: "/about/typescript" },
@@ -49,7 +49,7 @@ export default defineConfig({
       },
       {
         text: "经验",
-        collapsed: true, // 默认折叠
+        collapsed: false, // 默认折叠
         items: [
           { text: "HTTPS", link: "/about/https" },
           { text: "HTML", link: "/about/html" },
@@ -57,6 +57,15 @@ export default defineConfig({
           { text: "JavaScript", link: "/about/js" },
           { text: "框架", link: "/about/frame" },
           { text: "浏览器", link: "/about/browser" },
+        ],
+      },
+      {
+        text: "疑难",
+        collapsed: false, // 默认折叠
+        items: [
+          { text: "ECharts", link: "/about/echarts" },
+          { text: "地图", link: "/about/map" },
+          { text: "翻译", link: "/about/translate" },
         ],
       },
     ],
@@ -85,6 +94,22 @@ export default defineConfig({
     footer: {
       message: "WeChat：Byet529",
       copyright: "by RyzenVega64",
+    },
+  },
+  // 自定义容器标题
+  markdown: {
+    container: {
+      tipLabel: "提示",
+      warningLabel: "警告",
+      dangerLabel: "危险",
+      infoLabel: "注意",
+      detailsLabel: "详细",
+    },
+  },
+  // 图片懒加载
+  arkdown: {
+    image: {
+      lazyLoading: true,
     },
   },
 });
