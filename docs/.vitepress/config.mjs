@@ -25,7 +25,7 @@ export default defineConfig({
     // },
     // 配置导航栏
     nav: [
-      { text: "GO", link: "/", activeMatch: "/" },
+      { text: "GO", link: "/" },
       {
         text: "笔记",
         items: [
@@ -43,7 +43,6 @@ export default defineConfig({
         collapsed: false, // 默认折叠
         items: [
           { text: "Vue", link: "/about/vue" },
-          { text: "TypeScript", link: "/about/typescript" },
           { text: "VitePress", link: "/about/vitepress" },
         ],
       },

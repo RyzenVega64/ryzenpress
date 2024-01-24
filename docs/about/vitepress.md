@@ -1,13 +1,15 @@
 # 开始
 
-### **先决条件**
+## **先决条件**
 
 * [Node.js](https://nodejs.org/) 版本 18 或更高版本。
 * 支持 [Markdown](https://en.wikipedia.org/wiki/Markdown) 语法的文本编辑器
 
-*VitePress可以安装到现有项目中 亦可以单独使用*
+::: tip
+VitePress可以安装到现有项目中 亦可以单独使用
+:::
 
-使用以下命令进行安装：
+## 安装
 
 ```javascript
 pnpm install -D vitepress
@@ -62,4 +64,8 @@ pnpm vitepress init
 pnpm run docs:dev
 ```
 
-# 部署
+## 构建&部署
+
+目前免费托管网站比较多 如 [Vercel](https://vercel.com/home) 、[Zeabur](https://zeabur.com/zh-CN)、[Netlify](https://app.netlify.com/)
+
+这里选择 [Vercel](https://vercel.com/home) 进行部署
