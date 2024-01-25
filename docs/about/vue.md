@@ -19,7 +19,7 @@ npm -v
 node -v
 ```
 
-## 安装 `<Badge type="tip" text="^3.4.14" />`
+## 安装 <Badge type="tip" text="^3.4.14" />
 
 ```
 pnpm create vite
@@ -65,7 +65,7 @@ pnpm run dev
 
 ## 工具配置
 
-使用的开发工具是[VS Code](https://code.visualstudio.com/)(推荐)的话，可以安装以下工具来提高开发效率及代码格式化
+使用的开发工具是[VS Code](https://code.visualstudio.com/)(推荐)，可以安装以下工具来提高开发效率及代码格式化
 
 - [ Chinese (Simplified) (简体中文) ]
 - [ HTML CSS Support ]
@@ -77,25 +77,39 @@ pnpm run dev
 - [ GitLens ]
 - [ Live Server ]
 - [ Tabnine AI ]
-
-Vue 项目插件推荐
-
 - [ TypeScript Vue Plugin (Volar) ]
 - [ Vue 3 Snippets ]
 - [ Vue Language Features (Volar) ]
 - [ Vue 3 Snippets ]
 - [ Vetur ]
 
-## 插件配置
+## 插件推荐
 
-根据项目需求 适当引入
+图表库
 
 - [ECharts](https://echarts.apache.org/zh/index.html "一个基于 JavaScript 的开源可视化图表库")
+
+组件库
+
 - [Element-ui](https://element.eleme.cn/#/zh-CN "基于Vue2 面向设计师和开发者的组件库")
 - [Element-Plus](https://element-plus.gitee.io/zh-CN/ "基于Vue3 面向设计师和开发者的组件库")
-- [Axios](https://www.javasoho.com/axios/index.html "一个基于 promise 的 HTTP 库")
 - [remixicon](https://remixicon.cn/ "简单令人愉快的图标系统")
+
+请求库
+
+- [Axios](https://www.javasoho.com/axios/index.html "一个基于 promise 的 HTTP 库")
+
+媒体库
+
 - [EasyPlayer](http://open.tsingsee.com/sdk/easyplayer/ "一款流媒体播放器系列项目")
-- [cesium](https://cesium.com/ "3D 地理空间平台")
-- [three.js](http://www.webgl3d.cn/ "基于原生WebGL封装运行的三维引擎库")
+
+3D 库（ WebGL ）
+
+- [Cesium](https://cesium.com/ "3D 地理空间平台")
+- [three.js
+  ](http://www.webgl3d.cn/ "基于原生WebGL封装运行的三维引擎库")
+- [orillusion](https://www.orillusion.com/ "次时代 WebGPU 引擎")
+
+跨平台
+
 - [Elector](https://electronjs.p2hp.com/ "构建跨平台桌面应用程序")
