@@ -29,47 +29,60 @@ export default defineConfig({
       {
         text: "笔记",
         items: [
-          { text: "初识", link: "/about/vue" },
-          { text: "经验", link: "/about/https" },
-          { text: "项目", link: "/about/project" },
+          { text: "初识", link: "/note/vue" },
+          { text: "经验", link: "/note/https" },
+          { text: "项目", link: "/note/project" },
         ],
       },
-      { text: "关于我", link: "/about/cv" },
+      { text: "关于我", link: "/me/cv" },
     ],
     // 配置侧边栏
-    sidebar: [
-      {
-        text: "初识",
-        collapsed: false, // 默认折叠
-        items: [
-          { text: "Vue", link: "/about/vue" },
-          { text: "VitePress", link: "/about/vitepress" },
-        ],
-      },
-      {
-        text: "经验",
-        collapsed: false, // 默认折叠
-        items: [
-          { text: "HTTPS", link: "/about/https" },
-          { text: "HTML", link: "/about/html" },
-          { text: "CSS", link: "/about/css" },
-          { text: "JavaScript", link: "/about/js" },
-          { text: "框架", link: "/about/frame" },
-          { text: "浏览器", link: "/about/browser" },
-        ],
-      },
-      {
-        text: "疑难",
-        collapsed: false, // 默认折叠
-        items: [
-          { text: "ECharts", link: "/about/echarts" },
-          { text: "地图", link: "/about/map" },
-          { text: "翻译", link: "/about/translate" },
-          { text: "Cesium", link: "/about/cesium" },
-          { text: "Three", link: "/about/three" },
-        ],
-      },
-    ],
+    sidebar: {
+      // 当用户位于 `note` 目录时，会显示此侧边栏
+      "/note/": [
+        {
+          text: "初识",
+          collapsed: false, // 默认折叠
+          items: [
+            { text: "Vue", link: "/note/vue" },
+            { text: "VitePress", link: "/note/vitepress" },
+          ],
+        },
+        {
+          text: "经验",
+          collapsed: false, // 默认折叠
+          items: [
+            { text: "HTTPS", link: "/note/https" },
+            { text: "HTML", link: "/note/html" },
+            { text: "CSS", link: "/note/css" },
+            { text: "JavaScript", link: "/note/js" },
+            { text: "框架", link: "/note/frame" },
+            { text: "浏览器", link: "/note/browser" },
+          ],
+        },
+        {
+          text: "疑难",
+          collapsed: false, // 默认折叠
+          items: [
+            { text: "ECharts", link: "/note/echarts" },
+            { text: "地图", link: "/note/map" },
+            { text: "翻译", link: "/note/translate" },
+            { text: "Cesium", link: "/note/cesium" },
+            { text: "Three", link: "/note/three" },
+          ],
+        },
+      ],
+
+      // 当用户位于 `me` 目录时，会显示此侧边栏
+      "/me/": [
+        {
+          text: "关于我",
+          items: [
+            { text: "我的简历", link: "/me/cv" },
+          ],
+        },
+      ],
+    },
     // 配置图片链接
     socialLinks: [
       {

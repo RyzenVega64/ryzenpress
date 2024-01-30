@@ -1,4 +1,4 @@
-# 开始
+# VitePress
 
 ## **先决条件**
 
@@ -146,7 +146,7 @@ docs/.vitepress/dist
 
 Deploy 开始部署吧！
 
-## 使用
+## 使用建议
 
 Markdown 是一种轻量级标记语言,。 它允许人们使用易读易写的纯文本格式编写文档,然后转换成有效的 HTML 文档。
 
@@ -294,7 +294,7 @@ export default {
 </ul>
 ```
 
-使用 emoji
+### 使用 emoji
 
 [所有表情均可使用](https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.mjs)
 
@@ -328,6 +328,7 @@ export default {
 
 输出
 ::: code-group
+
 ```config.js
 const config = {
   // ...
@@ -343,4 +344,5 @@ const config: UserConfig = {
 
 export default config
 ```
+
 :::

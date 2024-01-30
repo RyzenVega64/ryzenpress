@@ -13,7 +13,7 @@ hero:
   actions:
     - theme: brand
       text: 关于我
-      link: /about/note.md
+      link: /me/cv.md
     - theme: alt
       text: GPT 未来已来 🌎
       link: https://ryzengpt.vercel.app/
