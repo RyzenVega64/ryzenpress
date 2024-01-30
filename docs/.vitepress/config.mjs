@@ -65,6 +65,8 @@ export default defineConfig({
           { text: "ECharts", link: "/about/echarts" },
           { text: "地图", link: "/about/map" },
           { text: "翻译", link: "/about/translate" },
+          { text: "Cesium", link: "/about/cesium" },
+          { text: "Three", link: "/about/three" },
         ],
       },
     ],
