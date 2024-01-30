@@ -54,7 +54,7 @@ methods: {
 
 ## 热力图 Bug
 
-ECharts版本  `<Badge type="tip" text="^5.3.2" />`
+ECharts版本  <Badge type="tip" text="^5.3.2" />
 
 ![foo](/about/echarts1.png)
 

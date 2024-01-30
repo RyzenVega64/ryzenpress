@@ -19,7 +19,7 @@ npm -v
 node -v
 ```
 
-## 安装 `<Badge type="tip" text="^3.4.14" />`
+## 安装 <Badge type="tip" text="^3.4.14" />
 
 ```
 pnpm create vite
