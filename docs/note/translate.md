@@ -35,7 +35,7 @@ pnpm install vue-i18n
 
 zh.js
 
-```
+```javascript
 export default {
     i18Ntxt: {
       username: '用户名',
@@ -46,7 +46,7 @@ export default {
 
 en.js
 
-```
+```javascript
 export default {
     i18Ntxt: {
       username: 'username',
@@ -61,7 +61,7 @@ index.js
 这里引入了element的语言包 如不需要 可删
 :::
 
-```
+```javascript
 import Vue from 'vue'
 import store from '@/store'
 import VueI18n from 'vue-i18n'
@@ -94,7 +94,7 @@ export default i18n
 
 main.js
 
-```
+```javascript
 //导入语言包
 import i18n from './i18n'
 
@@ -106,7 +106,7 @@ new Vue({
 
 组件使用
 
-```
+```javascript
 {{$t('密码')}}  // password
 ```
 
@@ -129,7 +129,7 @@ npm i i18n-jsautotranslate
 
 main.js
 
-```
+```javascript
 import translate from 'i18n-jsautotranslate'
 translate.setUseVersion2() //设置使用v2.x 版本
 translate.selectLanguageTag.show = false //是否显示切换栏
@@ -141,7 +141,7 @@ Vue.prototype.$translate = translate
 
 在 localStorage 里存入一个 val  根据这个 val 去判断要切换的语种
 
-```
+```javascript
 <div @click="languageAuto()"> 一键翻译 </div>
 
 data() {

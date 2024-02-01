@@ -10,7 +10,7 @@
 
 在项目合适位置创建 echartsResize.js
 
-```
+```javascript
 // 防抖函数
 export default function debounce(fn, delay) {
   let timer = null
@@ -30,7 +30,7 @@ export default function debounce(fn, delay) {
 
 组件
 
-```
+```javascript
 // 引用
 import chartResize from '@/utils/echartsResize'
  
@@ -58,12 +58,11 @@ ECharts版本  <Badge type="tip" text="^5.3.2" />
 
 ![foo](/about/echarts1.png)
 
-似乎是因为Canvas渲染问题导致 虽切换为svg渲染解决 但该问题始终存在
+左上角没有数据时 总是缺一块
 
-代码示例
+似乎是因为Canvas渲染问题导致 切换为svg渲染解决
 
-```
-let chartDom = document.getElementById("main");
+```javascript{2}
 let myChart = echarts.init(chartDom, null, {
     renderer: "svg", // 设置渲染方式为 SVG
 });

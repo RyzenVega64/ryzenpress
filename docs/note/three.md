@@ -1,3 +1,7 @@
+<script setup>
+import three from '../component/three.vue'
+</script>
+
 # Three.js
 
 简言
@@ -5,16 +9,16 @@
 > 做大屏可视化时偶然了解到该技能，小众但炫酷
 >
 > 需要有一定建模、数学、三维空间能力水准
+>
+> three.js 貌似对 TypeScript 的支持不是很友好...
 
-## Vite+Vue3+TS 安装
+## Vite+Vue3 安装
 
 ### 安装&引入
 
 ```
-# TS安装three时 应避免使用pnpm
-npm install --save three
-npm install --save-dev @types/three
-npm install --save gsap
+pnpm install three
+pnpm install @types/three
 ```
 
 ### 组件使用
@@ -53,7 +57,6 @@ onMounted(() => {
   if (threeView) {
     getThreeViewWidth.value = threeView.clientWidth;
     getThreeViewHeight.value = threeView.clientHeight;
-    console.log(getThreeViewWidth.value, getThreeViewHeight.value);
   }
   initThree();
   render();
@@ -64,7 +67,7 @@ onMounted(() => {
 const initThree = () => {
   // 初始化场景
   scene = new THREE.Scene();
-  scene.background = new THREE.Color(0xffffff); // 设置背景颜色为白色
+  scene.background = new THREE.Color(0xeeeeee); // 设置背景颜色为白色
 
   // 初始化相机
   camera = new THREE.PerspectiveCamera(
@@ -73,14 +76,13 @@ const initThree = () => {
     0.1,
     1000
   );
-  camera.position.set(-10, -5, 1);
+  camera.position.set(0, 5, 0);
   camera.updateProjectionMatrix();
 
   // 初始化渲染器
   renderer = new THREE.WebGLRenderer({
     antialias: true, // 开启抗锯齿
   });
-  console.log(window.innerWidth, window.innerHeight);
   renderer.setSize(getThreeViewWidth.value, getThreeViewHeight.value); // 设置渲染器的尺寸与窗口大小一致
   document.body.appendChild(renderer.domElement); // 将渲染器的画布插入到页面中
   renderer.outputEncoding = THREE.sRGBEncoding; // 设置色调映射
@@ -102,7 +104,7 @@ const initThree = () => {
   gltfLoader.setDRACOLoader(dracoLoader);
 
   // 加载模型
-  gltfLoader.load("../../../public/model/无人机.glb", (gltf) => {
+  gltfLoader.load("/public/libs/model/home.glb", (gltf) => {
     const model = gltf.scene;
     model.traverse((child: any) => {
       if (child.name === "Plane") {
@@ -134,11 +136,16 @@ const render = () => {
 };
 </script>
 
-<style lang="scss">
+<style scoped>
 .threeView {
-  width: 70%;
+  width: 100%;
   aspect-ratio: 16/9;
 }
 </style>
 
 ```
+
+### 演示
+
+AR极简主义
+<three />

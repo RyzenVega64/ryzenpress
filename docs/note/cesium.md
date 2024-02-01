@@ -1,3 +1,7 @@
+<script setup>
+import cesium from '../component/cesium.vue'
+</script>
+
 # Cesium
 
 简言
@@ -10,27 +14,23 @@
 
 ### 申请 Cesium Token
 
-进入Cesium 注册账号
+进入 Cesium 注册账号
 
 [cesium](https://ion.cesium.com/signin)
 
-> 离谱的是 E宝 (Epic) 居然可以快捷登录？！
+> 离谱的是 E 宝 (Epic) 居然可以快捷登录？！
 
-登录后点击导航栏的 Access Token 再右侧即可看到默认Token
+登录后点击导航栏的 Access Token 再右侧即可看到默认 Token
 
 ### 安装&引入
 
 ```
-# Cesium pnpm
 pnpm install cesium
-
-# 如果项目同时存在Three.js 需避免使用pnpm Three.js对pnpm + ts的组合并不友好
-npm i cesium
 ```
 
-依赖包安装完毕后 需要在 public 文件夹内创建一个引用文件夹  这里命名为libs
+依赖包安装完毕后 需要在 public 文件夹内创建一个引用文件夹 这里命名为 libs
 
-将 node_modules / cesium / Build / Cesium 中的 Assets、ThirdParty、Widgets、Workers 引入到刚刚创建好的libs文件夹内
+将 node_modules / cesium / Build / Cesium 中的 Assets、ThirdParty、Widgets、Workers 引入到刚刚创建好的 libs 文件夹内
 
 ```
 public/
@@ -42,9 +42,9 @@ public/
 │   └── Workers
 ```
 
-在main.ts中 引入
+在 main.ts 中 引入
 
-```
+```javascript
 // 引入cesium
 import { Ion } from "cesium";
 import "cesium/Build/Cesium/Widgets/widgets.css";
@@ -56,7 +56,7 @@ window.CESIUM_BASE_URL = '/libs';
 
 ::: danger
 
-当浏览器报如下错误时 应当把代码中 infoBox 参数修改为 false ，这里默认为false
+当浏览器报如下错误时 应当把代码中 infoBox 参数修改为 false ，这里默认为 false
 
 ```
 Blocked script execution in 'about:blank' because the document's frame is sandboxed and the 'allow-scripts' permission is not set.
@@ -98,3 +98,8 @@ onMounted(() => {
 </style>
 
 ```
+
+### 演示
+
+初始效果
+<cesium />
