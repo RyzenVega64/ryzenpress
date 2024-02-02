@@ -38,7 +38,7 @@ export default defineConfig({
     ],
     // 配置侧边栏
     sidebar: {
-      // 当用户位于 `note` 目录时，会显示此侧边栏
+      // 当用户位于 note 目录时，会显示此侧边栏
       "/note/": [
         {
           text: "初识",
@@ -72,8 +72,6 @@ export default defineConfig({
           ],
         },
       ],
-
-      // 当用户位于 `me` 目录时，会显示此侧边栏
       "/me/": [
         {
           text: "关于我",

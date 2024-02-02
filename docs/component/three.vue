@@ -76,7 +76,7 @@ const initThree = () => {
   gltfLoader.setDRACOLoader(dracoLoader);
 
   // 加载模型
-  gltfLoader.load("/public/libs/model/home.glb", (gltf) => {
+  gltfLoader.load("/public/model/home.glb", (gltf) => {
     const model = gltf.scene;
     model.traverse((child: any) => {
       if (child.name === "Plane") {
