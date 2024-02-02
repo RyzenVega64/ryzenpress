@@ -1,9 +1,14 @@
 <template>
-  <div id="threeView" class="threeView"></div>
+  <div class="conter">
+    <div id="threeView" class="threeView"></div>
+    <span class="schedule" v-show="showSchedule">{{
+      "模型加载进度：" + value
+    }}</span>
+  </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted, watch } from "vue";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
@@ -18,6 +23,17 @@ let scene: any,
 
 const getThreeViewWidth = ref<number>(0);
 const getThreeViewHeight = ref<number>(0);
+
+const value = ref<String>("0");
+const showSchedule = ref(true);
+
+watch(value, (newValue) => {
+  if (newValue === "100") {
+    showSchedule.value = false;
+  } else {
+    showSchedule.value = true;
+  }
+});
 
 onUnmounted(() => {
   // 在组件卸载时清理资源
@@ -76,19 +92,29 @@ const initThree = () => {
   gltfLoader.setDRACOLoader(dracoLoader);
 
   // 加载模型
-  gltfLoader.load("/model/home.glb", (gltf) => {
-    const model = gltf.scene;
-    model.traverse((child: any) => {
-      if (child.name === "Plane") {
-        child.visible = false;
-      }
-      if (child.isMesh) {
-        child.castShadow = true;
-        child.receiveShadow = true;
-      }
-    });
-    scene.add(model);
-  });
+  gltfLoader.load(
+    "/model/home.glb",
+    (gltf) => {
+      const model = gltf.scene;
+      model.traverse((child: any) => {
+        if (child.name === "Plane") {
+          child.visible = false;
+        }
+        if (child.isMesh) {
+          child.castShadow = true;
+          child.receiveShadow = true;
+        }
+      });
+      scene.add(model);
+    },
+    function (xhr) {
+      // 监听计算加载进度
+      const percent = Math.floor((xhr.loaded / xhr.total) * 100);
+      console.log(percent);
+      console.log(value.value);
+      value.value = String(percent);
+    }
+  );
 
   // 设置灯光
   initLight();
@@ -109,8 +135,17 @@ const render = () => {
 </script>
 
 <style lang="scss" scoped>
+.conter {
+  position: relative;
+}
 .threeView {
   width: 100%;
   aspect-ratio: 16/9;
+}
+.schedule {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 </style>

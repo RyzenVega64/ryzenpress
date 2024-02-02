@@ -66,7 +66,6 @@ import {
   Vector3,
   VectorKeyframeTrack
 } from "./chunk-BZEGMLO2.js";
-import "./chunk-F3FYYIAV.js";
 
 // node_modules/.pnpm/three@0.160.1/node_modules/three/examples/jsm/utils/BufferGeometryUtils.js
 function toTrianglesDrawMode(geometry, drawMode) {
