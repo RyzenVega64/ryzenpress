@@ -1,3 +1,30 @@
+<script setup>
+import orillusion from '../component/orillusion.vue'
+</script>
+
+# orillusion
+
+简言
+
+> 如同 three.js
+>
+> 同样是对 WebGL 封装的第三方库
+>
+> 更好用 更快 兼容性更好
+
+## Vite+Vue3 安装
+
+### 安装&引入
+
+```
+pnpm install @orillusion/core --save
+```
+
+### 组件使用
+
+> 这里引入
+
+```javascript
 <template>
   <div class="canvasView">
     <canvas class="canvas" ref="canvasRef"></canvas>
@@ -97,3 +124,10 @@ const orInit = async () => {
   }
 }
 </style>
+
+```
+
+### 演示
+
+一张图片在三维场景中的应用
+<orillusion />

@@ -70,13 +70,13 @@ const initThree = () => {
 
   // 初始化模型加载器
   dracoLoader = new DRACOLoader();
-  dracoLoader.setDecoderPath("./draco/");
+  // dracoLoader.setDecoderPath("./draco/");
 
   gltfLoader = new GLTFLoader();
   gltfLoader.setDRACOLoader(dracoLoader);
 
   // 加载模型
-  gltfLoader.load("/public/model/home.glb", (gltf) => {
+  gltfLoader.load("/model/home.glb", (gltf) => {
     const model = gltf.scene;
     model.traverse((child: any) => {
       if (child.name === "Plane") {
@@ -108,7 +108,7 @@ const render = () => {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .threeView {
   width: 100%;
   aspect-ratio: 16/9;

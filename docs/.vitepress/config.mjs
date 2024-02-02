@@ -69,15 +69,14 @@ export default defineConfig({
             { text: "翻译", link: "/note/translate" },
             { text: "Cesium", link: "/note/cesium" },
             { text: "Three", link: "/note/three" },
+            { text: "orillusion", link: "/note/orillusion" },
           ],
         },
       ],
       "/me/": [
         {
           text: "关于我",
-          items: [
-            { text: "我的简历", link: "/me/cv" },
-          ],
+          items: [{ text: "我的简历", link: "/me/cv" }],
         },
       ],
     },
