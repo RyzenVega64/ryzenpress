@@ -28,7 +28,7 @@ const value = ref<String>("0");
 const showSchedule = ref(true);
 
 watch(value, (newValue) => {
-  if (newValue === "100" || newValue === "Infinity") {
+  if (newValue === "100") {
     showSchedule.value = false;
   } else {
     showSchedule.value = true;
@@ -109,8 +109,13 @@ const initThree = () => {
     },
     function (xhr) {
       // 监听计算加载进度
-      const percent = Math.floor((xhr.loaded / xhr.total) * 100);
-      value.value = String(percent);
+      const percent = ((xhr.loaded / xhr.total) * 100).toFixed(2);
+      console.log(xhr);
+      console.log(percent);
+      if (String(percent) === "100.00") {
+        value.value = "100";
+      }
+      console.log(value.value);
     }
   );
 
