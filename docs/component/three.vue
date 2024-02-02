@@ -111,9 +111,6 @@ const initThree = () => {
     function (xhr) {
       // 监听计算加载进度
       const percent = (Math.floor(xhr.loaded) / 4443176) * 100;
-      console.log(Math.floor(xhr.loaded));
-      console.log(xhr);
-      console.log("当前进度" + percent.toFixed(2));
       if (String(percent.toFixed(2)) === "100.00") {
         showSchedule.value = false;
       } else {
@@ -153,5 +150,6 @@ const render = () => {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: #666;
 }
 </style>
