@@ -1,7 +1,7 @@
 <script setup>
 import three from '../component/three.vue'
 </script>
-
+<three />
 # Three.js
 
 简言
@@ -148,4 +148,3 @@ const render = () => {
 ### 演示
 
 AR极简主义
-<three />

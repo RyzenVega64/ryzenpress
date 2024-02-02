@@ -107,10 +107,13 @@ const initThree = () => {
       });
       scene.add(model);
     },
+    // 加载过程中的回调函数
     function (xhr) {
       // 监听计算加载进度
-      const percent = (Math.floor(xhr.loaded) / Math.floor(xhr.total)) * 100;
-      console.log("当前进度" + percent);
+      const percent = (Math.floor(xhr.loaded) / 4443176) * 100;
+      console.log(Math.floor(xhr.loaded));
+      console.log(xhr);
+      console.log("当前进度" + percent.toFixed(2));
       if (String(percent.toFixed(2)) === "100.00") {
         showSchedule.value = false;
       } else {
