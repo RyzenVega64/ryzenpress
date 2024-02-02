@@ -27,13 +27,13 @@ const getThreeViewHeight = ref<number>(0);
 const value = ref<String>("0");
 const showSchedule = ref(true);
 
-watch(value, (newValue) => {
-  if (newValue === "100") {
-    showSchedule.value = false;
-  } else {
-    showSchedule.value = true;
-  }
-});
+// watch(value, (newValue) => {
+//   if (newValue === "100") {
+//     showSchedule.value = false;
+//   } else {
+//     showSchedule.value = true;
+//   }
+// });
 
 onUnmounted(() => {
   // 在组件卸载时清理资源
@@ -109,13 +109,13 @@ const initThree = () => {
     },
     function (xhr) {
       // 监听计算加载进度
-      const percent = ((xhr.loaded / xhr.total) * 100).toFixed(2);
-      console.log(xhr);
-      console.log(percent);
-      if (String(percent) === "100.00") {
-        value.value = "100";
+      const percent = (Math.floor(xhr.loaded) / Math.floor(xhr.total)) * 100;
+      console.log("当前进度" + percent);
+      if (String(percent.toFixed(2)) === "100.00") {
+        showSchedule.value = false;
+      } else {
+        value.value = String(percent.toFixed(2));
       }
-      console.log(value.value);
     }
   );
 
