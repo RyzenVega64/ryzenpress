@@ -416,6 +416,7 @@ import {
   createCanvasElement,
   sRGBEncoding
 } from "./chunk-BZEGMLO2.js";
+import "./chunk-F3FYYIAV.js";
 export {
   ACESFilmicToneMapping,
   AddEquation,

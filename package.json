@@ -5,6 +5,7 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
+    "@orillusion/core": "^0.7.2",
     "@types/three": "^0.161.1",
     "echarts": "^5.4.3",
     "three": "^0.160.0",
@@ -13,6 +14,6 @@
   "devDependencies": {
     "sass": "^1.69.7",
     "sass-loader": "^14.0.0",
-    "vitepress": "1.0.0-rc.36"
+    "vitepress": "1.0.0-rc.43"
   }
 }
