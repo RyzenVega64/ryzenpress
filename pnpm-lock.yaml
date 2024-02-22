@@ -5,9 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@orillusion/core':
-    specifier: ^0.7.2
-    version: 0.7.2
   '@types/three':
     specifier: ^0.161.1
     version: 0.161.2
@@ -425,10 +422,6 @@ packages:
   /@jridgewell/sourcemap-codec@1.4.15:
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
     dev: true
-
-  /@orillusion/core@0.7.2:
-    resolution: {integrity: sha512-GeH1coIFjNWJRm8RKRd3dFwpJfDoZPbEI3cNxJnqivKKWN49HlzlOiq4RGnDcxZMdvljoB3uGVXOuzEeaLp3qA==}
-    dev: false
 
   /@rollup/rollup-android-arm-eabi@4.9.6:
     resolution: {integrity: sha512-MVNXSSYN6QXOulbHpLMKYi60ppyO13W9my1qogeiAqtjb2yR4LSmfU2+POvDkLzhjYLXz9Rf9+9a3zFHW1Lecg==}

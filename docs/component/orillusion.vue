@@ -20,7 +20,7 @@ import {
   makeAloneSprite,
   WorldPanel,
   GPUCullMode,
-} from "@orillusion/core";
+} from "https://unpkg.com/@orillusion/core/dist/orillusion.es.js";
 
 // 获取画布元素
 const canvasRef = ref(null);
@@ -42,7 +42,7 @@ const orInit = async () => {
       canvas: canvasRef.value, // 指定 canvas 元素, 可以自定义管理 canvas 大小或布局
       alpha: true, // 是否背景透明, 默认 false
       zIndex: 1, // CSS z-index, 默认 0
-      // backgroundImage: "path/to/bg", // 若 alpha 透明时的背景图片
+      // backgroundImage: '', // 若 alpha 透明时的背景图片
       devicePixelRatio: 1, // 渲染 DPR, 默认使用 window.devicePixelRatio
     },
   });
@@ -79,7 +79,7 @@ const orInit = async () => {
   // 加载一个 BitmapTexture2D
   let bitmapTexture2D = new BitmapTexture2D();
   bitmapTexture2D.flipY = true;
-  await bitmapTexture2D.load("/logo.jpg");
+  await bitmapTexture2D.load('/logo.jpg');
 
   // 创建图像节点
   let imageQuad = new Object3D();

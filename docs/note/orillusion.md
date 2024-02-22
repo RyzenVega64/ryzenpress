@@ -130,6 +130,5 @@ const orInit = async () => {
 ### 演示
 
 一张图片在三维场景中的应用
-<ClientOnly>
-  <orillusion />
-</ClientOnly>
+<orillusion />
+
