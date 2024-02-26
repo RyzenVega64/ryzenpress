@@ -176,5 +176,5 @@ const render = () => {
 
 ### 演示
 
-AR极简主义
-`<three />`
+AR 极简主义
+<three />

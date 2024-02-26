@@ -48,8 +48,8 @@ public/
 // 引入cesium
 import { Ion } from "cesium";
 import "cesium/Build/Cesium/Widgets/widgets.css";
-Ion.defaultAccessToken = "第一步申请的Access Token"
-window.CESIUM_BASE_URL = '/libs';
+Ion.defaultAccessToken = "第一步申请的Access Token";
+window.CESIUM_BASE_URL = "/libs";
 ```
 
 ### 组件使用
