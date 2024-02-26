@@ -12,9 +12,9 @@
 
 ## i18n
 
-这插件就不必多说  但凡涉及到翻译的  必定有它身影  点对点翻译  笨拙且实用
+不必多说  但凡涉及到翻译  必定有它身影  点对点翻译  笨拙且实用
 
-逻辑比较简单零碎
+逻辑简单零碎
 
 1. 创建 / 导入语言包
 2. 把语言包内数据进行解构赋值
@@ -139,7 +139,7 @@ Vue.prototype.$translate = translate
 
 使用
 
-在 localStorage 里存入一个 val  根据这个 val 去判断要切换的语种
+在 localStorage 里存入一个 val  根据 val 去判断要切换的语种
 
 ```javascript
 <div @click="languageAuto()"> 一键翻译 </div>

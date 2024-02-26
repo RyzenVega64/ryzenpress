@@ -10,7 +10,7 @@ import orillusion from '../component/orillusion.vue'
 >
 > 同样是对 WebGL 封装的第三方库
 >
-> 更好用 更快 兼容性更好
+> 更好用 更快
 
 ## Vite+Vue3 安装
 
@@ -130,5 +130,4 @@ const orInit = async () => {
 ### 演示
 
 一张图片在三维场景中的应用
-<orillusion />
-
+`<orillusion />`

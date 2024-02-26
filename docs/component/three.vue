@@ -27,14 +27,6 @@ const getThreeViewHeight = ref<number>(0);
 const value = ref<String>("0");
 const showSchedule = ref(true);
 
-// watch(value, (newValue) => {
-//   if (newValue === "100") {
-//     showSchedule.value = false;
-//   } else {
-//     showSchedule.value = true;
-//   }
-// });
-
 onUnmounted(() => {
   // 在组件卸载时清理资源
   if (renderer) renderer.dispose();

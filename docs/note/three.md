@@ -9,8 +9,6 @@ import three from '../component/three.vue'
 > 做大屏可视化时偶然了解到该技能，小众但炫酷
 >
 > 需要有一定建模、数学、三维空间能力水准
->
-> three.js 貌似对 TypeScript 的支持不是很友好...
 
 ## Vite+Vue3 安装
 
@@ -23,15 +21,20 @@ pnpm install @types/three
 
 ### 组件使用
 
-> 这里引入的 无人机.glb 模型文件 路径在 public / model 目录下
+> 这里引入的 home.glb 模型文件 路径在 public / model 目录下
 
 ```typescript
 <template>
-  <div id="threeView" class="threeView"></div>
+  <div class="conter">
+    <div id="threeView" class="threeView"></div>
+    <span class="schedule" v-show="showSchedule">{{
+      "模型加载进度：" + value
+    }}</span>
+  </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted, watch } from "vue";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
@@ -46,6 +49,9 @@ let scene: any,
 
 const getThreeViewWidth = ref<number>(0);
 const getThreeViewHeight = ref<number>(0);
+
+const value = ref<String>("0");
+const showSchedule = ref(true);
 
 onUnmounted(() => {
   // 在组件卸载时清理资源
@@ -98,25 +104,38 @@ const initThree = () => {
 
   // 初始化模型加载器
   dracoLoader = new DRACOLoader();
-  dracoLoader.setDecoderPath("./draco/");
+  // dracoLoader.setDecoderPath("./draco/");
 
   gltfLoader = new GLTFLoader();
   gltfLoader.setDRACOLoader(dracoLoader);
 
   // 加载模型
-  gltfLoader.load("/public/libs/model/home.glb", (gltf) => {
-    const model = gltf.scene;
-    model.traverse((child: any) => {
-      if (child.name === "Plane") {
-        child.visible = false;
+  gltfLoader.load(
+    "/model/home.glb",
+    (gltf) => {
+      const model = gltf.scene;
+      model.traverse((child: any) => {
+        if (child.name === "Plane") {
+          child.visible = false;
+        }
+        if (child.isMesh) {
+          child.castShadow = true;
+          child.receiveShadow = true;
+        }
+      });
+      scene.add(model);
+    },
+    // 加载过程中的回调函数
+    function (xhr) {
+      // 监听计算加载进度
+      const percent = (Math.floor(xhr.loaded) / 4443176) * 100;
+      if (String(percent.toFixed(2)) === "100.00") {
+        showSchedule.value = false;
+      } else {
+        value.value = String(percent.toFixed(2));
       }
-      if (child.isMesh) {
-        child.castShadow = true;
-        child.receiveShadow = true;
-      }
-    });
-    scene.add(model);
-  });
+    }
+  );
 
   // 设置灯光
   initLight();
@@ -136,10 +155,20 @@ const render = () => {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.conter {
+  position: relative;
+}
 .threeView {
   width: 100%;
   aspect-ratio: 16/9;
+}
+.schedule {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #666;
 }
 </style>
 
@@ -148,4 +177,4 @@ const render = () => {
 ### 演示
 
 AR极简主义
-<three />
+`<three />`
