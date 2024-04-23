@@ -1,11 +1,6 @@
 <template>
   <div class="canvasView">
-    <p>该插件比较新 对于目前开发环境支持度还不是很友好</p>
-    <p>该插件依赖包会挂载到window</p>
-    <P>但博客渲染方式为SSR 服务端渲染是不存在window顶级对象的</P>
-    <p>也试过VitePress官方解决方式 但打包依旧会报错</p>
-    <p>使用cdn则会报https错误</p>
-    <p>蜜汁BUG，已在社区反馈....</p>
+    <p> 正在实现以 SSR 渲染 Orillusion 以便实现更快加载速度 </p>
     <!-- <canvas class="canvas" ref="canvasRef"></canvas> -->
   </div>
 </template>

@@ -2,9 +2,10 @@ import {
   isReactive,
   isRef,
   toRaw
-} from "./chunk-3DXR62HT.js";
+} from "./chunk-UTGH4N2I.js";
+import "./chunk-CSAU5B4Q.js";
 
-// node_modules/.pnpm/@vue+devtools-shared@7.0.18/node_modules/@vue/devtools-shared/dist/index.js
+// node_modules/.pnpm/@vue+devtools-shared@7.0.15/node_modules/@vue/devtools-shared/dist/index.js
 var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -34,7 +35,7 @@ var __toESM = (mod, isNodeMode, target2) => (target2 = mod != null ? __create(__
   mod
 ));
 var init_esm_shims = __esm({
-  "../../node_modules/.pnpm/tsup@8.0.2_postcss@8.4.35_typescript@5.4.2/node_modules/tsup/assets/esm_shims.js"() {
+  "../../node_modules/.pnpm/tsup@8.0.2_postcss@8.4.35_typescript@5.3.3/node_modules/tsup/assets/esm_shims.js"() {
     "use strict";
   }
 });
@@ -519,7 +520,7 @@ async function _applyPromised(fn, _this, args) {
   return await fn.apply(_this, args);
 }
 
-// node_modules/.pnpm/@vue+devtools-kit@7.0.18_vue@3.4.21/node_modules/@vue/devtools-kit/dist/index.js
+// node_modules/.pnpm/@vue+devtools-kit@7.0.15_vue@3.4.19/node_modules/@vue/devtools-kit/dist/index.js
 var __create2 = Object.create;
 var __defProp2 = Object.defineProperty;
 var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -549,7 +550,7 @@ var __toESM2 = (mod, isNodeMode, target9) => (target9 = mod != null ? __create2(
   mod
 ));
 var init_esm_shims2 = __esm2({
-  "../../node_modules/.pnpm/tsup@8.0.2_postcss@8.4.35_typescript@5.4.2/node_modules/tsup/assets/esm_shims.js"() {
+  "../../node_modules/.pnpm/tsup@8.0.2_postcss@8.4.35_typescript@5.3.3/node_modules/tsup/assets/esm_shims.js"() {
     "use strict";
   }
 });
@@ -2216,8 +2217,6 @@ var StateEditor = class {
       const section = sections.shift();
       if (object instanceof Map)
         object = object.get(section);
-      if (object instanceof Set)
-        object = Array.from(object.values())[section];
       else
         object = object[section];
       if (this.refEditor.isRef(object))
@@ -2271,7 +2270,7 @@ var StateEditor = class {
         else if (toRaw(object) instanceof Map)
           object.delete(field);
         else if (toRaw(object) instanceof Set)
-          object.delete(Array.from(object.values())[field]);
+          object.delete(value);
         else
           Reflect.deleteProperty(object, field);
       }
@@ -2281,8 +2280,6 @@ var StateEditor = class {
           this.refEditor.set(target9, value);
         else if (toRaw(object) instanceof Map)
           object.set(state.newKey || field, value);
-        else if (toRaw(object) instanceof Set)
-          object.add(value);
         else
           object[state.newKey || field] = value;
       }
@@ -2294,22 +2291,8 @@ var RefStateEditor = class {
     if (isRef(ref)) {
       ref.value = value;
     } else {
-      if (ref instanceof Set && Array.isArray(value)) {
-        ref.clear();
-        value.forEach((v) => ref.add(v));
-        return;
-      }
-      const currentKeys = Object.keys(value);
-      if (ref instanceof Map) {
-        const previousKeysSet2 = new Set(ref.keys());
-        currentKeys.forEach((key) => {
-          ref.set(key, Reflect.get(value, key));
-          previousKeysSet2.delete(key);
-        });
-        previousKeysSet2.forEach((key) => ref.delete(key));
-        return;
-      }
       const previousKeysSet = new Set(Object.keys(ref));
+      const currentKeys = Object.keys(value);
       currentKeys.forEach((key) => {
         Reflect.set(ref, key, Reflect.get(value, key));
         previousKeysSet.delete(key);
@@ -2392,8 +2375,7 @@ function initStateFactory() {
     tabs: [],
     commands: [],
     vitePluginDetected: false,
-    activeAppRecordId: null,
-    highPerfModeEnabled: false
+    activeAppRecordId: null
   };
 }
 var _a4;
@@ -2567,14 +2549,12 @@ function onDevToolsClientConnected(fn) {
     });
   });
 }
-init_esm_shims2();
 export {
   addCustomCommand,
   addCustomTab,
   onDevToolsClientConnected,
   onDevToolsConnected,
   removeCustomCommand,
-  setupDevToolsPlugin,
-  setupDevToolsPlugin as setupDevtoolsPlugin
+  setupDevToolsPlugin
 };
 //# sourceMappingURL=vitepress___@vue_devtools-api.js.map

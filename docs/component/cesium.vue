@@ -1,7 +1,7 @@
 <template>
   <!-- 作为cesium的容器 -->
   <!-- <div class="container" ref="container"></div> -->
-  <p> 正在实现以 SSR 环境中渲染 cesium 以便实现更快加载速度  </p>
+  <p> 正在实现以 SSR 渲染 Cesium 以便实现更快加载速度 </p>
 </template>
 <script setup>
 // import { onMounted, ref } from "vue";

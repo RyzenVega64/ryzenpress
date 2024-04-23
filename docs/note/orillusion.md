@@ -2,11 +2,11 @@
 import orillusion from '../component/orillusion.vue'
 </script>
 
-# orillusion
+# Orillusion
 
 简言
 
-> 如同 three.js
+> 如同 Three.js
 >
 > 同样是对 WebGL 封装的第三方库
 >
